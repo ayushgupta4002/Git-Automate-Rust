@@ -29,7 +29,7 @@ fn automate(){
     let push_command = Command::new("git")
     .arg("push")
     .arg("origin")
-    .arg(branch_name())
+    .arg("master")
     .output().expect("push command could not be executed");
 
     if !push_command.status.success(){
@@ -48,14 +48,17 @@ fn commit_msg() -> String {
     commit_message
 }
 
-fn branch_name() -> String {
-    let mut branch = String::new();
-    println!("please enter your branch name:");
-    io::stdin().read_line(&mut branch).expect("sorry operation could not be performed");
-    branch
-}
+
 
 fn main() {
     println!("Hello, world!");
     automate();
 }
+
+
+// fn branch_name() -> String {
+//     let mut branch = String::new();
+//     println!("please enter your branch name:");
+//     io::stdin().read_line(&mut branch).expect("sorry operation could not be performed");
+//     branch
+// }
