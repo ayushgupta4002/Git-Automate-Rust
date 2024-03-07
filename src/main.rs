@@ -19,7 +19,7 @@ fn automate(){
     let commit_command =  Command::new("git")
     .arg("commit")
     .arg("-m")
-    .arg(&commit_message).output().expect("commit command could not be executed");
+    .arg(commit_message.clone()).output().expect("commit command could not be executed");
 
     if !commit_command.status.success(){
         eprintln!("Commit command failed !");
