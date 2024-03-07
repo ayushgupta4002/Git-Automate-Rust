@@ -47,11 +47,11 @@ fn branch_name() -> String {
     let mut branch = String::new();
     println!("please enter your branch name:");
     io::stdin().read_line(&mut branch).expect("sorry operation could not be performed");
-    branch
+    branch.trim().to_string()
 }
 
 fn main() {
-    println!("Hello, world!");
+    println!("W E L C O M E!");
     automate();
 }
 
