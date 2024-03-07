@@ -3,8 +3,6 @@ use std::io;
 
 fn automate(){
 
-    // let commit_message = commit_msg();
-
     let add_command = Command::new("git")
     .arg("add")
     .arg("-A")
@@ -37,28 +35,16 @@ fn automate(){
         exit(1);
     }
 
-    // println!("Successfully pushed all code with Commit message : {} ");
-
 }
 
 fn commit_msg() -> String {
-    let mut commit_message = String::new();
-    println!("please enter your commit message:");
-    io::stdin().read_line(&mut commit_message).expect("sorry operation could not be performed");
-    commit_message
+    let mut guess = String::new();
+    println!("please enter your commit message: !");
+    io::stdin().read_line(&mut guess).expect("sorry operation could not be performed");
+    guess
 }
-
-
 
 fn main() {
     println!("Hello, world!");
     automate();
 }
-
-
-// fn branch_name() -> String {
-//     let mut branch = String::new();
-//     println!("please enter your branch name:");
-//     io::stdin().read_line(&mut branch).expect("sorry operation could not be performed");
-//     branch
-// }
