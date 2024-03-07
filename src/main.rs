@@ -45,7 +45,7 @@ fn commit_msg() -> String {
 }
 fn branch_name() -> String {
     let mut branch = String::new();
-    println!("please enter your commit message:");
+    println!("please enter your branch name:");
     io::stdin().read_line(&mut branch).expect("sorry operation could not be performed");
     branch
 }
