@@ -31,7 +31,7 @@ fn automate(){
     .output().expect("push command could not be executed");
 
     if !push_command.status.success(){
-        eprintln!("push command could not be executed");
+        eprintln!("push command could not be executed  Error: {:?}", push_command.status);
         exit(1);
     }
 
